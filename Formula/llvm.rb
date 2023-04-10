@@ -12,16 +12,6 @@ class Llvm < Formula
     regex(/^llvmorg[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "541eb85ef784cefb37f24398354caf2ec1218e12aeff7b6094370aca14ad1aa7"
-    sha256 cellar: :any,                 arm64_monterey: "118e73da46f1c71449964d1e5767cf5a694008e22cda47ac4a0f46dca7049ccc"
-    sha256 cellar: :any,                 arm64_big_sur:  "a0faa83f255545043c20076e9bfd77783a1ac44a4a9c4effa968c4f191b06ef5"
-    sha256 cellar: :any,                 ventura:        "fcc4cf0d2658f10e7e8751aa24ad2d83e58c84709e52d114bb2da842ab203f76"
-    sha256 cellar: :any,                 monterey:       "a84c6a4a2d5a05eaabaf1590d01dedf364741d4be068338272c58518793bbe56"
-    sha256 cellar: :any,                 big_sur:        "e9c3b103b8a42411c65ea213c2ffbaeffcbcd7e27e6978eccec86f26461dc1be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a69e435bddd0876c250eb1f682a2ee33f4487dfe1ab17881aa8422b1ec35908f"
-  end
-
   # Clang cannot find system headers if Xcode CLT is not installed
   pour_bottle? only_if: :clt_installed
 
