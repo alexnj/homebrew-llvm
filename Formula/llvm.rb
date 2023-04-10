@@ -36,6 +36,8 @@ class Llvm < Formula
   depends_on "six"
   depends_on "z3"
   depends_on "zstd"
+  depends_on "grpc"
+  depends_on "protobuf"
 
   uses_from_macos "libedit"
   uses_from_macos "libffi", since: :catalina
@@ -114,6 +116,7 @@ class Llvm < Formula
       -DLLVM_ENABLE_Z3_SOLVER=ON
       -DLLVM_OPTIMIZED_TABLEGEN=ON
       -DLLVM_TARGETS_TO_BUILD=all
+      -DCLANGD_ENABLE_REMOTE=ON
       -DLLDB_USE_SYSTEM_DEBUGSERVER=ON
       -DLLDB_ENABLE_PYTHON=ON
       -DLLDB_ENABLE_LUA=OFF
